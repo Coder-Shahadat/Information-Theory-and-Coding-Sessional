@@ -1,5 +1,4 @@
 import heapq
-import os
 from collections import defaultdict, Counter
 
 
@@ -28,10 +27,7 @@ def build_tree(heap):
 
 
 freq = calculate_frequency("aaabbbbbccccccddddee")
-print(freq)
 heap = build_heap(freq)
-print(heap)
 tree = build_tree(heap)
-print(tree)
 for pair in tree[1:]:
     print(pair[0], '->', pair[1])
