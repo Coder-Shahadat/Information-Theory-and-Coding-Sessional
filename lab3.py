@@ -1,3 +1,5 @@
+import string
+
 message = 'AABABBBABAABABBBABBABB'
 dictionary = {}
 tmp, i, last = '', 1, 0
@@ -14,8 +16,8 @@ for x in message:
 if not Flag:
     last = dictionary[tmp]
 
-res = [list(dictionary.keys())[0]]
-for char, idx in list(dictionary.items())[1:]:
+res = []
+for char, idx in dictionary.items():
     tmp, s = '', ''
     for x, j in zip(char[:-1], range(len(char))):
         tmp += x
@@ -28,10 +30,8 @@ for char, idx in list(dictionary.items())[1:]:
 if last:
     res.append(str(last))
 
-mark = {
-    'A': 0,
-    'B': 1
-}
+alphabet = string.ascii_uppercase
+mark = dict(zip(alphabet, range(len(alphabet))))
 
 final_res = []
 for x in res:
