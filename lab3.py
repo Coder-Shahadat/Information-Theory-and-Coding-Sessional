@@ -14,7 +14,7 @@ for x in message:
 if not Flag:
     last = dictionary[tmp]
 
-res = ['1']
+res = [list(dictionary.keys())[0]]
 for char, idx in list(dictionary.items())[1:]:
     tmp, s = '', ''
     for x, j in zip(char[:-1], range(len(char))):
